@@ -1,0 +1,34 @@
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Habout from "./pages/Habout";
+import Hcareer from "./pages/Hcareer";
+import Hcontact from "./pages/Hcontact";
+import Home from "./components/Home";
+
+const App = () => {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+      children: [
+        {
+
+          path: "/",
+          element: <Habout />,
+        },
+        {
+          path: "/contact",
+          element: <Hcontact />,
+        },
+        {
+          path: "/career",
+          element: <Hcareer />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={route} />;
+};
+
+export default App;
